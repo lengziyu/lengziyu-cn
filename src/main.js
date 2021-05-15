@@ -12,6 +12,7 @@ import {
 	Icon,
 	Calendar,
 } from 'element-ui';
+
 Vue.use(Carousel);
 Vue.use(CarouselItem);
 Vue.use(Input);
