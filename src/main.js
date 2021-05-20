@@ -11,6 +11,7 @@ import {
 	Radio,
 	Icon,
 	Calendar,
+	Dialog,
 } from 'element-ui';
 
 Vue.use(Carousel);
@@ -22,7 +23,7 @@ Vue.use(Button);
 Vue.use(Radio);
 Vue.use(Icon);
 Vue.use(Calendar);
-
+Vue.use(Dialog);
 
 Vue.config.productionTip = false
 

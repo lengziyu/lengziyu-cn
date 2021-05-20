@@ -11,16 +11,16 @@ export default {
           return router.push(path);
         },
 		// 设置缓存
-		setStorage: (key, data, type = 'sessionStorage')=> {
+		setStorage: (key, data, type = 'localStorage')=> {
 			let storeStr = JSON.stringify(data);
 			return window[type].setItem(key, storeStr);
 		},
 		// 获取缓存
-		getStorage: (key, type = 'sessionStorage')=> {
+		getStorage: (key, type = 'localStorage')=> {
 			return JSON.parse(window[type].getItem(key))
 		},
 		// 清除缓存
-		removeStorage: (key, type = 'sessionStorage')=> {
+		removeStorage: (key, type = 'localStorage')=> {
 			return window[type].removeItem(key)
 		},
     }
