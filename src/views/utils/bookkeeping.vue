@@ -20,7 +20,7 @@
 						{{ addDateAmt(date, data) }}
 						<div v-for="a in dataList" v-if="a.date == data.day && a.amt" 
 						:class="a.status == '1'?'status-up':'status-down'">
-							<span class="price-dw">￥</span>{{ a.amt }}
+							<span class="price-dw">{{ a.status == '1'?'+':'-' }}</span>{{ a.amt }}
 						</div>
 					</div>
 				</template>
@@ -65,7 +65,7 @@ export default {
 		inputAmt: '',
 		currentDate: '',
 		statusAmt: '1',
-		currentAmt: '5453',
+		currentAmt: 0,
 		totalAmt: '12493',
 		totalAmtStatus: '1',
 		currentAmtStatus: '1'
@@ -84,6 +84,7 @@ export default {
 	var bookkeepingData = this.$utils.getStorage('bookkeepingData');
 	if(bookkeepingData){
 		this.dataList = bookkeepingData;
+		this.calculTotal();
 	}else{
 		this.dataList = [];
 		for (var a = 0; a < this.getHowDays(Y, numMonth); a++) {
@@ -138,9 +139,24 @@ export default {
 			this.inputAmt = '';
 			this.statusAmt = '1';
 			this.$utils.setStorage('bookkeepingData', this.dataList);
+			this.calculTotal();
 		})
+	},
+	// 计算总数
+	calculTotal(){
+		var monthStr = 0;
+		for (var i = 0; i < this.dataList.length; i++) {
+			if(this.dataList[i].amt){
+				if(this.dataList[i].status == '1'){
+					monthStr = monthStr+Number(this.dataList[i].amt);
+				}else{
+					monthStr = monthStr-Number(this.dataList[i].amt);
+				}
+			}
+		}
+		
+		this.currentAmt = monthStr;
 	}
-	 
   }
 }
 </script>
@@ -165,6 +181,15 @@ export default {
 }
 .price-dw{
 	font-size: 10px;
+}
+@media (max-width:992px) {
+	.container{
+		padding: 0;
+	}
+}
+.shouyi{
+	padding-left: 15px;
+	padding-right: 15px;
 }
 </style>
 
