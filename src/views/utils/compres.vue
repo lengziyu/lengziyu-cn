@@ -2,6 +2,9 @@
 	<div>
 		<Header />
 		<div class="main container">
+			<div class="el-back">
+				<el-page-header @back="$utils.back" content="记账本" />
+			</div>
 			<div class="compres-main">
 				<div class="compres-from">
 					<div class="compres-from-item">
@@ -176,6 +179,9 @@ export default {
 .main{
 	overflow: hidden;
 }
+.el-back{
+	margin-top: 30px;
+}
 .compres-main{
 	max-width: 460px;
 	margin: 0 auto;
@@ -250,7 +256,8 @@ export default {
 }
 .file-download{
 	.main-btn{
-		width: 92%;
+		// width: 92%;
+		width: 100%;
 	}
 }
 </style>

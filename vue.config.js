@@ -20,7 +20,8 @@ module.exports = {
     config.optimization.splitChunks({
       chunks: 'all'
     })
-
+	 config.plugin('webpack-bundle-analyzer')
+		.use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin)
     // 设置图片去掉base64
     config.module
       .rule('images')
@@ -86,7 +87,7 @@ module.exports = {
   },
   // Gzip
   configureWebpack: config => {
-
+	
   },
   // 预渲染
   // configureWebpack: config => {

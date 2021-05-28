@@ -72,6 +72,11 @@ export default {
 			  subtitle: '月度记账单。',
 			  image: require('@/assets/images/utils/bookkeeping.png'),
 			  href: '/utils/bookkeeping',
+		  },{
+			  title: '二维码生成',
+			  subtitle: '快捷生成二维码。',
+			  image: require('@/assets/images/utils/createQrcode.png'),
+			  href: '/utils/createQrcode',
 		  }]
 	  }
   },

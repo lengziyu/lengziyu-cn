@@ -1,29 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import { 
-	Carousel, 
-	CarouselItem,
-	Input,
-	Switch,
-	Upload,
-	Button,
-	Radio,
-	Icon,
-	Calendar,
-	Dialog,
-} from 'element-ui';
-
-Vue.use(Carousel);
-Vue.use(CarouselItem);
-Vue.use(Input);
-Vue.use(Switch);
-Vue.use(Upload);
-Vue.use(Button);
-Vue.use(Radio);
-Vue.use(Icon);
-Vue.use(Calendar);
-Vue.use(Dialog);
 
 Vue.config.productionTip = false
 

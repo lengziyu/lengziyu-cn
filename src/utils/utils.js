@@ -10,6 +10,9 @@ export default {
         routeTo: (path)=>{
           return router.push(path);
         },
+		back: ()=>{
+			router.go(-1);
+		},
 		// 设置缓存
 		setStorage: (key, data, type = 'localStorage')=> {
 			let storeStr = JSON.stringify(data);

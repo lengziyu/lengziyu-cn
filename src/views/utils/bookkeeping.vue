@@ -2,6 +2,9 @@
 	<div>
 		<Header />
 		<div class="mainer container">
+			<div class="el-back">
+				<el-page-header @back="$utils.back" content="记账本" />
+			</div>
 			<div class="shouyi">
 				<p>总收益：<span :class="totalAmtStatus == '1'?'status-up':'status-down'"><span class="price-dw">￥</span>{{ totalAmt }}</span></p>
 				<p>
@@ -190,6 +193,7 @@ export default {
 .shouyi{
 	padding-left: 15px;
 	padding-right: 15px;
+	text-align: right;
 }
 </style>
 
@@ -201,4 +205,5 @@ export default {
 .el-calendar-table thead th{
 	text-align: center;
 }
+
 </style>
