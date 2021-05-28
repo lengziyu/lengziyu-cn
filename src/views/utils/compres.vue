@@ -180,7 +180,7 @@ export default {
 	overflow: hidden;
 }
 .el-back{
-	margin-top: 30px;
+	margin-top: 40px;
 }
 .compres-main{
 	max-width: 460px;
