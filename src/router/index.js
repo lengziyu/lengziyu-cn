@@ -40,6 +40,10 @@ export const constantRouterMap = [
     path: '/utils/bookkeeping',
     name: 'UtilsBookkeeping',
     component: () => import('@/views/utils/bookkeeping.vue'),
+  },{
+    path: '/utils/createQrcode',
+    name: 'UtilsCreateQrcode',
+    component: () => import('@/views/utils/createQrcode.vue'),
   },
   { path: '*', component: () => import('@/views/404') }
 ]

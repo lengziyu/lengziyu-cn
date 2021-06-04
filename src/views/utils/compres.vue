@@ -3,7 +3,7 @@
 		<Header />
 		<div class="main container">
 			<div class="el-back">
-				<el-page-header @back="$utils.back" content="记账本" />
+				<el-page-header @back="$utils.back" content="压缩图片" />
 			</div>
 			<div class="compres-main">
 				<div class="compres-from">
