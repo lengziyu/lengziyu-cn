@@ -69,7 +69,7 @@ export default {
 		currentDate: '',
 		statusAmt: '1',
 		currentAmt: 0,
-		totalAmt: '12493',
+		totalAmt: '',
 		totalAmtStatus: '1',
 		currentAmtStatus: '1'
 		
@@ -83,7 +83,7 @@ export default {
 	let D = date.getDate() >= 10?date.getDate():'0'+date.getDate();
 
 	let numMonth = Number(M);
-	
+	console.log(numMonth)
 	var bookkeepingData = this.$utils.getStorage('bookkeepingData');
 	if(bookkeepingData){
 		this.dataList = bookkeepingData;
@@ -93,8 +93,17 @@ export default {
 		for (var a = 0; a < this.getHowDays(Y, numMonth); a++) {
 			let myMonth = (numMonth) >= 10?(numMonth):'0'+(numMonth);
 			let myDay = (a+1) >= 10?(a+1):'0'+(a+1);
-			this.dataList.push({date: Y+'-'+ myMonth +'-'+myDay},{status: '1'})
+			this.dataList.push(
+				{
+					[myMonth]: {
+						date: Y+'-'+ myMonth +'-'+myDay, 
+						status: '1',
+					} 
+				}
+			)
 		}
+		
+		console.log(this.dataList)
 	}
 	
 	// for (var i = 0; i < numMonth; i++) {

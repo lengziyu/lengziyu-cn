@@ -145,25 +145,24 @@ export default {
   },
   methods: {
 	  compresImages() {
-		  console.log(this.$refs.uploadInputEl.files[0])
 		  var formData = new FormData();
-		  formData.append('quality', this.quality);
-		  // formData.append('linkId',this.addId);
-		  // formData.append('rfilename',this.addFileName);
+		  formData.append('query', {
+			quality: this.quality,
+			isSetWH: this.isSetWH,
+			width: this.width,
+			height: this.height,
+			isSetWatermark: this.isSetWatermark,
+			watermarkPos: this.watermarkPos,
+			watermarkHight: this.watermarkHight,
+			watermarkWidth: this.watermarkWidth,
+		  });
+
 		  for(var i = 0;i<this.$refs.uploadInputEl.files.length;i++){
-			  formData.append('file', this.$refs.uploadInputEl.files[i]);
+			  formData.append('files'+i, {
+				  'file': this.$refs.uploadInputEl.files[i]
+			  });
 		  }
-		  // {
-		  // 			  file: this.$refs.uploadInputEl.files[0],
-		  // 			  quality: this.quality,
-		  // 			  isSetWH: this.isSetWH,
-		  // 			  width: this.width,
-		  // 			  height: this.height,
-		  // 			  isSetWatermark: this.isSetWatermark,
-		  // 			  watermarkPos: this.watermarkPos,
-		  // 			  watermarkHight: this.watermarkHight,
-		  // 			  watermarkWidth: this.watermarkWidth
-		  // }
+
 		  compresImages(formData).then(res=>{
 			  console.log(res)
 		  })

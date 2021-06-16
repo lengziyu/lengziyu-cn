@@ -5,7 +5,7 @@ export function compresImages(query) {
 	return request({
 	    url: '/api/compresImages',
 	    method: 'POST',
-		params: query,
+		data: query,
 		headers: {
 			'Content-Type': 'multipart/form-data'
 		}

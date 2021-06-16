@@ -8,7 +8,7 @@
 			<div class="compres-main">
 				<div class="compres-from">
 					<div class="compres-from-item mb-20">
-						  <el-tabs v-model="tabValue" @tab-click="">
+						  <el-tabs v-model="tabValue" @tab-click="tabClick">
 							<el-tab-pane label="链接" name="link">
 								<el-input placeholder="请输入URL链接" v-model="linkInput">
 									
@@ -81,6 +81,11 @@ export default {
 
   },
   methods: {
+	  // 点击切换
+	  tabClick(e) {
+		  this.showQrcode = false;
+	  },
+	  // 点击生成
 	  clickGenerate() {
 		  if(this.tabValue == 'link' && !this.linkInput){
 			  this.$notify({

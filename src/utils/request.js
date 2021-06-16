@@ -17,7 +17,6 @@ axios.defaults.headers.post['Content-Type'] = 'multipart/form-data';
 // 拦截请求头
 service.interceptors.request.use(
   config => {
-    console.log(config)
     if(config.method == 'POST'){
 		config.data = qs.stringify(config.data)
     }
@@ -30,7 +29,6 @@ service.interceptors.request.use(
 // 拦截实体
 service.interceptors.response.use(
   response => {
-	console.log(response.data)
 	if(response.data.code === '200'){
 		
 	}
